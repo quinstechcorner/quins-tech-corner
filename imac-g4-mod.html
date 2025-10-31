@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Quin's Tech Corner</title>
+  <meta name="description" content="A collection of guides, tutorials, and geeky projects. Quin's Tech Corner." />
+  <style>
+    :root{
+      --accent:#0a84ff;
+      --muted:#6b7280;
+      --bg:#ffffff;
+      --card:#f8fafc;
+      --maxw:1200px;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;background:var(--bg);color:#0b1220}
+    a{color:inherit;text-decoration:none}
+    header{border-bottom:1px solid #eef2f7;background:linear-gradient(180deg, rgba(255,255,255,0.8), rgba(255,255,255,1));backdrop-filter:blur(4px);position:sticky;top:0;z-index:30}
+    .container{max-width:var(--maxw);margin:0 auto;padding:24px}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:50px;height:50px;border-radius:8px;display:inline-grid;place-items:center;font-weight:700}
+    nav ul{display:flex;gap:18px;align-items:center;margin:0;padding:0;list-style:none}
+    .cta{padding:10px 14px;border-radius:10px;border:1px solid #e6eefb;background:linear-gradient(180deg,#fff,#f4f9ff);font-weight:600}
+
+    /* hero */
+    .hero{display:grid;grid-template-columns:1fr;gap:20px;align-items:center;padding:40px 0}
+    .hero-inner{display:flex;flex-direction:column;gap:16px}
+    .kicker{color:var(--muted);font-weight:600;text-transform:uppercase;font-size:12px;letter-spacing:1px}
+    h1{font-size:clamp(28px,4.2vw,44px);margin:0;line-height:1.02}
+    p.lead{font-size:18px;margin:0;color:var(--muted);max-width:80ch}
+    .hero-media{border-radius:14px;overflow:hidden;box-shadow:0 12px 30px rgba(11,18,32,.06)}
+    .hero-media img{width:100%;height:auto;display:block}
+
+    /* grid of thumbnails */
+    .thumb-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:24px}
+    .card{background:var(--card);padding:12px;border-radius:12px;border:1px solid #eef3fb;display:flex;gap:12px;align-items:flex-start}
+    .card img{width:100px;height:70px;object-fit:cover;border-radius:8px;flex-shrink:0}
+    .card h3{margin:0;font-size:15px}
+    .card p{margin:8px 0 0;color:var(--muted);font-size:13px}
+
+    /* features */
+    .features{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:40px 0}
+    .feature{padding:18px;border-radius:12px;border:1px solid #f1f5f9;background:#fff}
+    .feature h4{margin:0 0 8px}
+    .feature p{margin:0;color:var(--muted)}
+
+    footer{border-top:1px solid #eef2f7;padding:28px 0;margin-top:40px}
+
+    /* responsive */
+    @media (max-width:980px){.thumb-grid{grid-template-columns:repeat(2,1fr)}.features{grid-template-columns:repeat(2,1fr)}}
+    @media (max-width:640px){.nav{gap:8px}.hero{padding:20px 0}.hero{grid-template-columns:1fr}.thumb-grid{grid-template-columns:1fr}.features{grid-template-columns:1fr}.logo{width:36px;height:36px}}
+
+    /* mobile nav */
+    .menu-btn{display:none;background:transparent;border:0;padding:8px}
+    @media (max-width:640px){nav ul{display:none}.menu-btn{display:inline-block}}
+
+    /* subtle hover */
+    .card:hover{transform:translateY(-4px);transition:transform .18s ease}
+    .feature:hover{transform:translateY(-6px);transition:transform .18s ease}
+      
+.process-section {
+    display: flex;
+    align-items: flex-start;
+    gap: 24px;
+    margin-top: 16px;
+  }
+
+  .process-section img {
+    width: 50%;
+    max-width: 400px;
+    border-radius: 8px;
+  }
+
+  .process-section p {
+    flex: 1;
+    margin: 0;
+  }
+
+  /* ✅ Flip layout on desktop */
+  .process-section.flipped {
+    flex-direction: row-reverse !important;
+  }
+
+  /* Responsive stacking */
+  @media (max-width: 700px) {
+    .process-section,
+    .process-section.flipped {
+      flex-direction: column !important;
+      align-items: center;
+      text-align: center;
+    }
+
+    .process-section img {
+      width: 100%;
+      max-width: 500px;
+    }
+
+    .process-section p {
+      margin-top: 12px;
+    }
+  }
+</style>
+</head>
+    
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <div class="logo"><img src="img/qtc-logo.png" style='width:50px;'/> </div>
+        <div>
+          <div style="font-weight:700">Quin's Tech Corner</div>
+          <div style="font-size:12px;color:var(--muted)">Projects, guides, troubleshooting.</div>
+        </div>
+      </div>
+
+      <nav>
+        <button class="menu-btn" aria-label="menu">☰</button>
+        <ul>
+          <li><a href="https://discord.gg/SSPMt7WdBu">Community</a></li>
+          <li><a href="https://linktr.ee/quinstechcorner">Linktree</a></li>
+          <li><a class="cta" href="index.html">Home</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="hero-inner">
+        <h1>A dead classic made useful.</h1>
+        <p class="lead">Nobody can deny that the iMac G4 is one of the most iconic computers of all time.<br>Even in the 2020s it feels timeless, so when I acquired a dead 17" model I knew exactly what to do.<br><br>
+          The obvious solution to me, as someone who did this exact project about 10 years ago, was to convert the machine into a second monitor for my main setup - that way it can be enjoyed instead of sit in a cupboard.</p>
+        <div style="display:flex;gap:12px;margin-top:8px">
+        </div>
+      </div>
+
+      <div class="hero-media" aria-hidden="true">
+        <img src="img/img4-hero.png" alt="Modded iMac G4 monitor." />
+      </div>
+    </section>
+
+<h2 style="margin-top:28px">Part list</h2>
+<ul style="margin:12px 0 0 20px; line-height:1.6;">
+  <li>17" iMac G4 shell</li>
+  <li>LVDS controller kit (controller, inverter, cables)</li>
+  <li>Replacement 17" LCD (B170PW01 v.1)</li>
+  <li>40cm 2 channel 6bit LVDS cable</li>
+  <li>Inverter extension cables</li>
+  <li>Electrical tape, screwdrivers, spudgers</li>
+</ul>
+    
+<h2 style="margin-top:28px">The process</h2>
+<p>
+  After acquiring the iMac I initially tried to fix it.<br>
+  Booting was really inconsistent, and it seemed like the cause was a badly leaked BIOS battery on the logic board.<br><br>
+  I used some isopropyl alcohol to remove much of the battery acid, which allowed the machine to boot to an install CD once or twice, but in the end it was fruitless. It got to a point where I was unable to get any response from the machine at all, and so began the disassembly...
+</p>
+<br><br>
+
+<!-- Normal section (image left, text right) -->
+<div class="process-section">
+  <img src="img/img4-mess-1.png" alt="Messy iMac teardown">
+  <p>... and so began the mess. In by far the the easiest step of the process, I completely disassembled the iMac G4.<br><br>It was barbaric, and as far as I was concerned required absolutely no precision at all.<br> As long as I didn't scratch or crack anything I was happy, so I took screwdrivers and spudgers to every part in the machine until it was completely empty and all the parts were separate.<br><br>What resulted was the dining room table being taken over, for 3 full weeks, by the separated iMac parts, my controller board kit, cables, too many tools to count, and my new LCD.</p>
+</div>
+<br><br>
+<!-- Flipped section (image right, text left) -->
+<div class="process-section flipped">
+  <img src="img/img4-threading.png" alt="Logic board removal">
+  <p>Next was to run the LVDS display signal cable and LCD inverter cable through the iMac G4 neck, and this was by far the hardest part of the process.<br><br>To start, I unseated the internal spring mechanism which is held in by a <span style="font-style:oblique;">lot</span> of force, and I knew from my previous run of this project that getting it back into place would be hellish.<br><br>Strength and physics aside, I also had to redo the entire pinout for the LVDS cable.<br><br>My LCD data sheet called for a 2 channel 6 bit LVDS cable, which is easy to find, but threading it through the tiny opening in the iMac neck meant removing all of the pins on the controller board side, painstakingly labeling them, and reconnecting them after I had threaded them through the neck individually.</p>
+</div><br><br>
+<div class="process-section">
+  <img src="img/g4-mod.png" alt="Messy iMac teardown">
+  <p>After the pinout was done and the neck was reassembled (my tip is to seat one side of the spring and put a long allen key through the other hole to leverage it back into place)<br>re-assembly was pretty straightforward.<br><br>The controller board, inverter, and cables sit in the base of the iMac, and I've surrounded them with electrical tape.<br><br>The LVDS cable is painfully short, even at 40cm, so you need to really fiddle with the connector to get it into place. It means the controller board sits as high as possible in the base, and I've been left with some weird artefacts on the LCD that I'm currently convinced are related to the stress on the cable.<br><br>I might crack the display section open and double check the cable in the future, or panic buy another identical LCD while it's still in stock.<br><br>But it's working well for now and I love it.</p>
+</div>
+
+
+    <section id="about">
+      <h2 style="margin-top:36px">Helpful links</h2>
+        
+<section id="collection">
+      <div class="thumb-grid">
+        <a class="card" href="https://www.ebay.com.au/itm/276441490278" target="_blank">
+          <img src="img/lvds-board.jpg"/>
+          <div>
+            <h3>LVDS controller board</h3>
+            <p>Make sure the board works with your LCD. Ask the seller if unsure.</p>
+          </div>
+        </a>
+
+        <a class="card" href="https://www.ebay.com.au/itm/235318909977" target="_blank">
+          <img src="img/17-lcd.png"/>
+          <div>
+            <h3>B170PW01 Display</h3>
+            <p>I bought this panel. Make sure yours is 16:10, 17", 1440x900.</p>
+          </div>
+        </a>
+
+        <a class="card" href="https://hackaday.io/project/179868-all-about-laptop-display-reuse/log/193081-common-lvds-laptop-panel-pinouts" target="_blank">
+          <img src="img/lvds.jpg"/>
+          <div>
+            <h3>LVDS cheat sheet</h3>
+            <p>Cables and pinouts vary greatly, check your LCD and controller data sheets.</p>
+          </div>
+        </a>
+      </div>
+    </section>
+    </section>
+
+    <footer>
+      <div class="container">
+        <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+          <div style="color:var(--muted)">Quin's Tech Corner 2025</div>
+          <div style="color:var(--muted)">Built with ♥ for fun</div>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    // Mobile menu toggle
+    const btn = document.querySelector('.menu-btn');
+    const ul = document.querySelector('nav ul');
+    if(btn){btn.addEventListener('click',()=>{if(ul.style.display==='flex'){ul.style.display='none'}else{ul.style.display='flex';ul.style.flexDirection='column';ul.style.background='#fff';ul.style.position='absolute';ul.style.right='24px';ul.style.top='64px';ul.style.padding='12px';ul.style.borderRadius='10px';ul.style.boxShadow='0 8px 30px rgba(11,18,32,0.06)'}})}
+  </script>
+</body>
+</html>
