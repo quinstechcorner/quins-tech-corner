@@ -109,7 +109,7 @@
   <header>
     <div class="container nav">
       <div class="brand">
-        <div class="logo"><img src="img/qtc-logo.png" style='width:50px;'/> </div>
+        <div class="logo"><img src="../img/qtc-logo.png" style='width:50px;'/> </div>
         <div>
           <div style="font-weight:700">Quin's Tech Corner</div>
           <div style="font-size:12px;color:var(--muted)">Projects, guides, troubleshooting.</div>
@@ -138,7 +138,7 @@
       </div>
 
       <div class="hero-media" aria-hidden="true">
-        <img src="img/img4-hero.png" alt="Modded iMac G4 monitor." />
+        <img src="../img/img4-hero.png" alt="Modded iMac G4 monitor." />
       </div>
     </section>
 
@@ -162,17 +162,17 @@
 
 <!-- Normal section (image left, text right) -->
 <div class="process-section">
-  <img src="img/img4-mess-1.png" alt="Messy iMac teardown">
+  <img src="../img/img4-mess-1.png" alt="Messy iMac teardown">
   <p>... and so began the mess. In by far the the easiest step of the process, I completely disassembled the iMac G4.<br><br>It was barbaric, and as far as I was concerned required absolutely no precision at all.<br> As long as I didn't scratch or crack anything I was happy, so I took screwdrivers and spudgers to every part in the machine until it was completely empty and all the parts were separate.<br><br>What resulted was the dining room table being taken over, for 3 full weeks, by the separated iMac parts, my controller board kit, cables, too many tools to count, and my new LCD.</p>
 </div>
 <br><br>
 <!-- Flipped section (image right, text left) -->
 <div class="process-section flipped">
-  <img src="img/img4-threading.png" alt="Logic board removal">
+  <img src="../img/img4-threading.png" alt="Logic board removal">
   <p>Next was to run the LVDS display signal cable and LCD inverter cable through the iMac G4 neck, and this was by far the hardest part of the process.<br><br>To start, I unseated the internal spring mechanism which is held in by a <span style="font-style:oblique;">lot</span> of force, and I knew from my previous run of this project that getting it back into place would be hellish.<br><br>Strength and physics aside, I also had to redo the entire pinout for the LVDS cable.<br><br>My LCD data sheet called for a 2 channel 6 bit LVDS cable, which is easy to find, but threading it through the tiny opening in the iMac neck meant removing all of the pins on the controller board side, painstakingly labeling them, and reconnecting them after I had threaded them through the neck individually.</p>
 </div><br><br>
 <div class="process-section">
-  <img src="img/g4-mod.png" alt="Messy iMac teardown">
+  <img src="../img/g4-mod.png" alt="Messy iMac teardown">
   <p>After the pinout was done and the neck was reassembled (my tip is to seat one side of the spring and put a long allen key through the other hole to leverage it back into place)<br>re-assembly was pretty straightforward.<br><br>The controller board, inverter, and cables sit in the base of the iMac, and I've surrounded them with electrical tape.<br><br>The LVDS cable is painfully short, even at 40cm, so you need to really fiddle with the connector to get it into place. It means the controller board sits as high as possible in the base, and I've been left with some weird artefacts on the LCD that I'm currently convinced are related to the stress on the cable.<br><br>I might crack the display section open and double check the cable in the future, or panic buy another identical LCD while it's still in stock.<br><br>But it's working well for now and I love it.</p>
 </div>
 
@@ -183,7 +183,7 @@
 <section id="collection">
       <div class="thumb-grid">
         <a class="card" href="https://www.ebay.com.au/itm/276441490278" target="_blank">
-          <img src="img/lvds-board.jpg"/>
+          <img src="../img/lvds-board.jpg"/>
           <div>
             <h3>LVDS controller board</h3>
             <p>Make sure the board works with your LCD. Ask the seller if unsure.</p>
@@ -191,7 +191,7 @@
         </a>
 
         <a class="card" href="https://www.ebay.com.au/itm/235318909977" target="_blank">
-          <img src="img/17-lcd.png"/>
+          <img src="../img/17-lcd.png"/>
           <div>
             <h3>B170PW01 Display</h3>
             <p>I bought this panel. Make sure yours is 16:10, 17", 1440x900.</p>
@@ -199,7 +199,7 @@
         </a>
 
         <a class="card" href="https://hackaday.io/project/179868-all-about-laptop-display-reuse/log/193081-common-lvds-laptop-panel-pinouts" target="_blank">
-          <img src="img/lvds.jpg"/>
+          <img src="../img/lvds.jpg"/>
           <div>
             <h3>LVDS cheat sheet</h3>
             <p>Cables and pinouts vary greatly, check your LCD and controller data sheets.</p>
