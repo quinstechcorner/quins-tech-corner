@@ -1,0 +1,26 @@
+[
+  {
+    "title": "iMac G4 monitor mod",
+    "url": "projects/imac-g4-mod.html",
+    "description": "Here's how I turned a dead iMac G4 into a monitor.",
+    "keywords": ["imac", "g4", "monitor", "mod"]
+  },
+  {
+    "title": "Fix Wi-Fi on Fedora",
+    "url": "guides/fix-wifi-fedora.html",
+    "description": "Troubleshoot common Wi-Fi driver and connection issues in Fedora.",
+    "keywords": ["fedora", "wifi", "troubleshooting"]
+  },
+  {
+    "title": "Enable Virtualization in BIOS",
+    "url": "guides/enable-virtualization.html",
+    "description": "Learn how to enable VT-x/AMD-V to use virtual machines.",
+    "keywords": ["bios", "virtualization", "vm", "kvm"]
+  },
+  {
+    "title": "Set Up Dual Boot with Windows",
+    "url": "guides/setup-dualboot.html",
+    "description": "How to dual boot Linux and Windows safely and efficiently.",
+    "keywords": ["dualboot", "windows", "linux"]
+  }
+]
