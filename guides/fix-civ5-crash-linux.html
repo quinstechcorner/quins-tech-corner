@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Quin's Tech Corner</title>
+  <meta name="description" content="A collection of guides, tutorials, and geeky projects. Quin's Tech Corner." />
+
+<style>
+:root{
+  --accent:#0a84ff;
+  --muted:#6b7280;
+  --bg:#ffffff;
+  --card:#f8fafc;
+  --maxw:1200px;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;background:var(--bg);color:#0b1220}
+a{color:inherit;text-decoration:none}
+
+/* Header & nav */
+header{
+  border-bottom:1px solid #eef2f7;
+  background:linear-gradient(180deg, rgba(255,255,255,0.8), rgba(255,255,255,1));
+  backdrop-filter:blur(4px);
+  position:sticky;
+  top:0;
+  z-index:30;
+}
+.container{max-width:var(--maxw);margin:0 auto;padding:24px}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{display:flex;align-items:center;gap:12px}
+.logo{width:50px;height:50px;border-radius:8px;display:inline-grid;place-items:center;font-weight:700}
+nav ul{display:flex;gap:18px;align-items:center;margin:0;padding:0;list-style:none;position:relative}
+.cta{padding:10px 14px;border-radius:10px;border:1px solid #e6eefb;background:linear-gradient(180deg,#fff,#f4f9ff);font-weight:600}
+
+/* Hero banner (fixed height, responsive, earthy brown tint) */
+.hero-banner {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  border-radius: 14px;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  padding: 0 32px;
+  color: #ffffff;
+  margin-top: 0;
+}
+.hero-banner::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: rgba(80, 60, 40, 0.75);
+  border-radius: 14px;
+}
+.hero-banner > * {
+  position: relative;
+  max-width: 800px;
+  z-index: 1;
+}
+.hero-banner h1 {
+  font-size: clamp(24px, 3.5vw, 36px);
+  margin: 0;
+  line-height: 1.1;
+  text-align: left;
+}
+
+/* Lead paragraph */
+.hero-banner + .lead {
+  font-size: 16px;
+  color: #000000;
+  margin: 16px 0 0 0;
+  max-width: 75ch;
+}
+
+/* Terminal-style snippet (center text vertically) */
+.terminal-snippet {
+  background-color: #503c37;
+  color: #f0e6d2;
+  font-family: 'Fira Code', 'Courier New', monospace;
+  padding: 24px;
+  border-radius: 12px;
+  margin: 16px 0;
+  overflow-x: auto;
+  border: 1px solid #7a634d;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 40px;
+}
+.terminal-snippet h2 {
+  margin: 0;
+  color: #ffffff;
+  font-size: 16px;
+}
+.terminal-snippet p {
+  margin: 8px 0 0 0;
+  color: #ffffff;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* Grid of thumbnails */
+.thumb-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:24px}
+.card{background:var(--card);padding:12px;border-radius:12px;border:1px solid #eef3fb;display:flex;gap:12px;align-items:flex-start}
+.card img{width:100px;height:70px;object-fit:cover;border-radius:8px;flex-shrink:0}
+.card h3{margin:0;font-size:15px}
+.card p{margin:8px 0 0;color:var(--muted);font-size:13px}
+
+/* Features */
+.features{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:40px 0}
+.feature{padding:18px;border-radius:12px;border:1px solid #f1f5f9;background:#fff}
+.feature h4{margin:0 0 8px}
+.feature p{margin:0;color:var(--muted)}
+
+footer{border-top:1px solid #eef2f7;padding:28px 0;margin-top:40px}
+
+/* Responsive */
+@media (max-width:980px){
+  .thumb-grid{grid-template-columns:repeat(2,1fr)}
+  .features{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:640px){
+  .nav{gap:8px}
+  .hero-banner{height:200px;padding:0 20px}
+  .hero-banner h1{font-size: clamp(20px,5vw,28px)}
+  .thumb-grid{grid-template-columns:1fr}
+  .features{grid-template-columns:1fr}
+  .logo{width:36px;height:36px}
+  .terminal-snippet{min-height:100px;padding:16px}
+}
+
+/* Mobile nav toggle */
+.menu-btn {
+  display: none;
+  background: transparent;
+  border: 0;
+  padding: 8px;
+  font-size: 20px;
+  cursor: pointer;
+}
+@media (max-width:640px){
+  nav ul {
+    display: none;
+    flex-direction: column;
+    gap: 0;
+    background: #fff;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 200px;
+    border: 1px solid #eef2f7;
+    border-radius: 8px;
+    padding: 8px 0;
+  }
+  nav ul.show { display: flex; }
+  .menu-btn { display: inline-block; }
+}
+
+/* Process section */
+.process-section {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+  margin-top: 16px;
+}
+.process-section img {
+  width: 50%;
+  max-width: 400px;
+  border-radius: 8px;
+}
+.process-section p {
+  flex: 1;
+  margin: 0;
+}
+.process-section.flipped { flex-direction: row-reverse !important; }
+@media (max-width:700px){
+  .process-section,.process-section.flipped {
+    flex-direction: column !important;
+    align-items: center;
+    text-align: center;
+  }
+  .process-section img { width: 100%; max-width: 500px; }
+  .process-section p { margin-top: 12px; }
+}
+
+/* Subtle hover effects */
+.card:hover{transform:translateY(-4px);transition:transform .18s ease}
+.feature:hover{transform:translateY(-6px);transition:transform .18s ease}
+</style>
+
+
+
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <div class="logo"><img src="../img/qtc-logo.png" style='width:50px;'/> </div>
+        <div>
+          <div style="font-weight:700">Quin's Tech Corner</div>
+          <div style="font-size:12px;color:var(--muted)">Projects, guides, troubleshooting.</div>
+        </div>
+      </div>
+      <nav>
+        <button class="menu-btn" aria-label="menu" onclick="document.querySelector('nav ul').classList.toggle('show')">☰</button>
+        <ul>
+          <li><a href="index.html#collection">Projects</a></li>
+          <li><a href="guides.html">Guides</a></li>
+          <li><a href="https://discord.gg/SSPMt7WdBu">Community</a></li>
+          <li><a href="https://linktr.ee/quinstechcorner">Linktree</a></li>
+          <li><a class="cta" href="index.html">Home</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Slim hero banner -->
+    <section class="hero-banner" style="background-image:url(../img/civ-5.png);">
+        <h1>Fix random CIV 5 crashes on Linux<br>(>8 CPU threads).</h1>
+    </section><br>
+      
+    <p class="lead">
+        Here's a really simple fix to try if you've been experiencing random crashes in CIV 5 on Linux, where it otherwise runs OK.<br><br>
+        A lot of random crashes in CIV under Linux are caused by the ridiculous hard-coded 8 thread CPU limit imposed in the config file.<br><br>
+        If your CPU has more than 8 threads, this fix should be all you need.
+      </p><br>
+      
+      <h2>1. Open terminal &amp; go to the CIV folder</h2>
+      <p>If you've installed via Steam, the following command should open the folder we need.</p>
+
+    <!-- Terminal-style snippet -->
+    <div class="terminal-snippet">
+      <p>cd ~/.local/share/Aspyr/Sid\ Meier\'s\ Civilization\ 5/</p>
+    </div>
+<p>In this folder, we're looking for the file called config.ini.<br>If you want to check if it's there, you can do the <span style="font-weight: bold;">ls</span> command.</p>
+
+<br>
+      
+      <h2>2. Edit config.ini</h2>
+      <p>Use a terminal-based text editor to edit the config file.<br>Almost all Linux distros have the <span style="font-weight: bold;">nano</span> text editor, so let's do that.</p>
+
+    <!-- Terminal-style snippet -->
+    <div class="terminal-snippet">
+      <p>nano config.ini</p>
+    </div>
+<p>Once you're editing config.ini, find the part that says<span style="font-weight: bold;">MaxSimultaneousThreads</span>.<br><br>Change the number to how ever many threads your CPU has. In my case it was <span style="font-weight: bold;">16 threads (8 cores)</span><br>If you're unsure, google your CPU - the manufacturer website should list how many threads it has.<br><br>To save the file, press <span style="font-weight: bold;">CTRL + O</span> and then enter.<br>Then exit the editor by pressing <span style="font-weight: bold;">CTRL + X</span> .</p>
+      
+<br>
+      
+      <h2>3. Test it</h2>
+      <p>Doing this should fix your random crashes, if they were being caused by the 8 thread limit in the config file.<br><br>Hopefully it works, but if not, try the usual fixes.<br>Reinstalling, checking drivers, and checking game-file integrity via Steam.</p>
+
+
+    <footer>
+      <div class="container">
+        <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+          <div style="color:var(--muted)">Quin's Tech Corner 2025</div>
+          <div style="color:var(--muted)">Built with ♥ for fun</div>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    // Mobile menu toggle
+    const btn = document.querySelector('.menu-btn');
+    const ul = document.querySelector('nav ul');
+    if(btn){btn.addEventListener('click',()=>{if(ul.style.display==='flex'){ul.style.display='none'}else{ul.style.display='flex';ul.style.flexDirection='column';ul.style.background='#fff';ul.style.position='absolute';ul.style.right='24px';ul.style.top='64px';ul.style.padding='12px';ul.style.borderRadius='10px';ul.style.boxShadow='0 8px 30px rgba(11,18,32,0.06)'}})}
+  </script>
+    
+    <script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
+<script>
+  kofiWidgetOverlay.draw('quinstechcorner', {
+    'type': 'floating-chat',
+    'floating-chat.donateButton.text': 'Support me',
+    'floating-chat.donateButton.background-color': '#794bc4',
+    'floating-chat.donateButton.text-color': '#fff'
+  });
+</script>
+    
+</body>
+</html>

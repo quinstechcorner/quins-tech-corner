@@ -6,9 +6,9 @@
     "keywords": ["imac", "g4", "monitor", "mod", "LVDS"]
   },
   {
-    "title": "$1,700 Gaming PC build",
-    "url": "projects/1700-gaming-pc.html",
-    "description": "Here's a cool $1,700 gaming PC that spends the whole budget on performance!",
-    "keywords": ["gaming", "build", "gaming PC"]
+    "title": "Fix random CIV 5 crashes on Linux",
+    "url": "guides/fix-civ5-crash-linux.html",
+    "description": "Here's how to fix random crashes on CIV 5 when using Linux.",
+    "keywords": ["CIV 5", "CIV", "civilization", "crashes", "crash", "linux", "thread"]
   }
 ]
