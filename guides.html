@@ -100,8 +100,8 @@
   <main class="container">
     <section class="hero">
       <div class="hero-inner">
-        <h1>Guides</h1>
-        <p class="lead">Here's my collection of tutorials, guides, and troubleshooting woes.<br>Hopefully they're useful for you.</p>
+        <h1>Bits and pieces</h1>
+        <p class="lead">Here's my collection of tutorials, guides, and troubleshooting woes - hopefully they're useful for you.<br><br>Use this dodgy search function to get started!</p>
         
         <!-- 🔍 Search Bar -->
         <div class="search-bar">
@@ -165,7 +165,9 @@
         `).join('');
       }
 
-      render(guides); // show all by default
+      //render(guides); show all by default
+        
+      render([]);  // do not show all by default
 
       searchInput.addEventListener('input', e => {
         const term = e.target.value.toLowerCase();
